@@ -1,0 +1,12 @@
+{
+  "name": "demarche-pas-a-pas",
+  "version": "1.0.0",
+  "description": "Démarches administratives en France : Claude fait le maximum, puis guide une étape à la fois, en très peu de mots, sans jargon ni jugement.",
+  "author": {
+    "name": "Elwynn18"
+  },
+  "homepage": "https://github.com/Elwynn18/OK-Claude",
+  "repository": "https://github.com/Elwynn18/OK-Claude",
+  "license": "MIT",
+  "keywords": ["administratif", "démarches", "france", "phobie administrative", "accompagnement"]
+}

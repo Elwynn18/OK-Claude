@@ -1,0 +1,14 @@
+{
+  "name": "ok-claude",
+  "description": "Des aides toutes prêtes pour Claude, pensées pour les gens que l'IA n'intéresse pas. Démarches, papiers, quotidien : on s'en occupe ensemble, un pas à la fois.",
+  "owner": {
+    "name": "Elwynn18"
+  },
+  "plugins": [
+    {
+      "name": "demarche-pas-a-pas",
+      "source": "./plugins/demarche-pas-a-pas",
+      "description": "Démarches administratives en France : Claude fait le maximum, puis guide une étape à la fois, en très peu de mots."
+    }
+  ]
+}
