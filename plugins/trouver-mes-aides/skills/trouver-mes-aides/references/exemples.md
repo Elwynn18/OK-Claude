@@ -12,28 +12,28 @@ Les appels à l'outil de questions sont décrits entre crochets : ce que la pers
 
 **Claude** :
 
-> Je cherche vos aides. Quelques réponses à cliquer, 2 minutes.
+> On va trouver ce à quoi vous pourriez avoir droit. Quelques réponses à cliquer, 2 minutes.
 
 > [Outil de questions, 4 questions]
 > **Âge** · Quel âge avez-vous ? → Moins de 25 ans · 25 à 29 ans · 30 à 64 ans · 65 ans ou plus
-> **Logement** · Pour votre logement, vous êtes… ? → Locataire · Propriétaire · Hébergé(e) · Sans logement stable
-> **Chômage** · Côté France Travail, vous êtes… ? → Inscrit(e), avec allocation · Inscrit(e), sans allocation · Pas inscrit(e) · Je crée mon entreprise
+> **Logement** · Pour votre logement, vous êtes… ? → Locataire · Propriétaire · Hébergée · Sans logement stable
+> **Chômage** · Côté France Travail (ex-Pôle emploi), où en êtes-vous ? → Inscrite, avec allocation · Inscrite, en attente · Inscrite, sans droit · Pas encore inscrite
 > **Âges enfants** · Quel âge ont vos enfants ? (plusieurs choix) → Moins de 3 ans · 3 à 5 ans · 6 à 17 ans · 18 ans ou plus
 
-*(Le socle étant en partie connu, Claude complète le premier appel avec deux questions de série 2.)*
+*(Le socle étant en partie connu, Claude complète le premier appel avec les détails liés à ce qu'elle a évoqué : le chômage et les enfants. Elle a dit « seule » : les réponses sont accordées au féminin.)*
 
-**Personne** : [30 à 64 ans · Locataire · Pas inscrit(e) · 3 à 5 ans, 6 à 17 ans]
+**Personne** : [30 à 64 ans · Locataire · Pas encore inscrite · 3 à 5 ans, 6 à 17 ans]
 
 **Claude** :
 
 > [Outil de questions, 3 questions, sans texte autour]
-> **Revenus** · Combien entre chaque mois dans votre foyer, à peu près ? → Moins de 1 000 € · 1 000 à 2 000 € · 2 000 à 3 000 € · Plus de 3 000 €
-> **Déjà reçu** · Vous recevez déjà une de ces aides ? (plusieurs choix) → Aucune · Aide au logement · Prime d'activité ou RSA · Allocations familiales
+> **Revenus** · Aujourd'hui, combien entre chaque mois dans votre foyer, à peu près ? → Moins de 1 000 € · 1 000 à 2 000 € · 2 000 à 3 000 € · Plus de 3 000 €
+> **Déjà reçu** · Vous recevez déjà une de ces aides ? (plusieurs choix, variante parents) → Aucune · Allocations familiales · Aide au logement · Prime d'activité ou RSA
 > **Loyer** · Votre loyer par mois, charges comprises ? → Moins de 400 € · 400 à 700 € · 700 à 1 000 € · Plus de 1 000 €
 
 **Personne** : [1 000 à 2 000 € · Allocations familiales · 700 à 1 000 €]
 
-*(En silence : Claude passe en revue les familles d'aides « Sans emploi » et « Parents ». Il vérifie chaque aide sur les sites officiels et croise avec une seconde source. Il écarte les allocations familiales, déjà reçues, et estime les montants avec les simulateurs officiels.)*
+*(En silence : Claude passe en revue les familles d'aides « Sans emploi » et « Parents ». Il vérifie chaque aide sur les sites officiels et croise avec une seconde source. Il écarte les allocations familiales, déjà reçues, et estime les montants à partir des barèmes officiels.)*
 
 **Claude** :
 

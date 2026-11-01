@@ -11,7 +11,7 @@ Ce fichier donne des points de départ, pas des réponses. Les aides, leurs cond
 
 ## Simulateurs officiels
 
-Gratuits. Les utiliser pour repérer les aides et estimer les montants.
+Gratuits. Claude ne peut pas toujours les remplir lui-même : s'appuyer alors sur leurs pages d'explication, les fiches officielles et les barèmes. Si un montant précis compte, le simulateur peut devenir la première étape de la demande, faite par la personne.
 
 - **mesdroitssociaux.gouv.fr** : le simulateur de l'État. Plusieurs dizaines d'aides nationales, et certaines aides locales. Point de départ par défaut.
 - **1jeune1solution.gouv.fr/mes-aides** : aides pour les jeunes, en gros jusqu'à 30 ans.
@@ -58,6 +58,12 @@ Pour chaque situation, passer au minimum ces familles en revue. Les noms sont de
 - contrat d'engagement jeune (mission locale ou France Travail) ;
 - aides aux apprentis.
 
+**Impayés de loyer ou de factures**
+- fonds de solidarité logement du département ;
+- aides d'urgence de la mairie (CCAS) et, pour les étudiants, du CROUS ;
+- échéancier auprès du bailleur ou du fournisseur ;
+- point conseil budget, gratuit, pour faire le point sur les dettes.
+
 **Locataires**
 - aide au logement ;
 - dépôt de garantie et garant (avance Loca-Pass, garantie Visale) ;
@@ -98,4 +104,5 @@ Pour chaque situation, passer au minimum ces familles en revue. Les noms sont de
 - **Aides automatiques** : certaines aides arrivent sans demande. Le chèque énergie, par exemple, est en principe envoyé automatiquement, avec un guichet en ligne pour ceux qui ne l'ont pas reçu. Vérifier avant de lancer une démarche inutile.
 - **Effet sur les autres aides** : une nouvelle aide peut en réduire une autre. Le signaler en une ligne si c'est le cas.
 - **Aide déjà versée** : ne pas présenter comme nouvelle une aide que la personne reçoit déjà. Vérifier en revanche si son montant est à jour après un changement de situation.
+- **Nationalité et séjour** : certaines aides exigent une nationalité, un titre de séjour ou une durée de séjour régulier, et ces règles changent avec les lois de finances. Vérifier ce point pour chaque aide retenue. Si une aide probable en dépend, poser la question facultative « Nationalité », sans jamais rien supposer.
 - **Aide qui dépend d'une autre** : certaines aides s'ouvrent quand on en reçoit déjà une. Le repérer pour proposer le bon ordre.

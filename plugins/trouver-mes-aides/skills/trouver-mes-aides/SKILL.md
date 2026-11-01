@@ -13,7 +13,7 @@ Chaque question en plus et chaque mot en trop sont un coût pour la personne.
 
 ## Déroulé
 
-Suivre ces phases dans l'ordre. Les phases 1 et 3 se font en silence, sans les commenter.
+Suivre ces phases dans l'ordre. Seule exception : une dernière série courte de questions peut suivre la recherche (voir phase 2). Les phases 1 et 3 se font en silence, sans les commenter.
 
 ### 1. Partir de ce qui est déjà dit
 
@@ -25,17 +25,17 @@ Ne jamais reposer une question dont la réponse est connue. Redemander donne l'i
 
 Toutes les questions passent par l'outil de questions à choix de Claude (par exemple AskUserQuestion), avec des réponses préremplies. Aucune question n'est écrite dans le texte du message. Cliquer une réponse demande bien moins d'effort que rédiger, et la personne voit tout de suite que ce sera simple.
 
-- **Banque de questions** : prendre les questions et les réponses toutes prêtes dans [references/questions.md](references/questions.md). Les adapter seulement si la situation l'exige, en gardant des réponses courtes.
+- **Banque de questions** : prendre les questions et les réponses toutes prêtes dans [references/questions.md](references/questions.md), avec la variante adaptée au profil (jeunes, parents, étudiants, retraite). Si aucune ne convient, en écrire une dans le même esprit : courte, avec des réponses à cliquer.
 - **Par séries** : 4 questions au maximum par appel de l'outil, 3 séries au maximum. Souvent, 2 suffisent.
-  - **Série 1** : le socle (âge, foyer, logement, travail), moins ce qui est déjà connu.
-  - **Série 2** : selon les réponses. D'abord les revenus et les aides déjà reçues, puis le détail qui pèse le plus (enfants, emploi, études, santé…).
-  - **Série 3** : seulement si une réponse peut encore changer le résultat (un seuil de revenus proche, les aides locales).
-  - Si une partie du socle est déjà connue, compléter le premier appel avec les questions de série 2 les plus utiles. Moins d'allers-retours, c'est moins de fatigue.
-- **Avant la première série** : une seule ligne de texte, puis l'outil.
-  > Je cherche vos aides. Quelques réponses à cliquer, 2 minutes.
+  - **Série 1** : le socle (âge, foyer, logement, travail), moins ce qui est déjà connu. S'il reste de la place, la compléter avec les détails liés à ce que la personne a évoqué (chômage, enfants, bourse, retards de loyer…). Moins d'allers-retours, c'est moins de fatigue.
+  - **Série 2** : les revenus et les aides déjà reçues, puis les détails restants qui pèsent le plus.
+  - **Dernière série courte** (2 questions au plus) : seulement si une réponse peut encore changer le résultat. Elle peut venir après la recherche, si celle-ci révèle une condition décisive encore inconnue (un seuil de revenus proche, une condition de nationalité, les aides locales).
+- **Avant la première série** : une seule ligne de texte, puis l'outil. Si la personne a posé une question directe, y répondre d'abord, sans rien promettre. Par exemple :
+  > Il en existe, oui. Quelques réponses à cliquer, et je regarde lesquelles vous concernent.
 - **Entre deux séries** : aucun texte. Pas de récapitulatif des réponses.
 - **Tranches plutôt que chiffres** : revenus, loyer et âge se demandent par tranches. La personne n'a pas à chercher un papier pour répondre.
-- **Questions sensibles** (santé, handicap) : proposer « Je préfère ne pas dire ».
+- **Questions sensibles** (santé, handicap, nationalité) : proposer « Je préfère ne pas dire ».
+- **Accords et registre** : accorder quand le genre est connu (« Seule avec enfants »). Tutoyer seulement si la personne tutoie.
 - **Réponse libre** : si la personne écrit dans le champ libre (« Autre »), s'en servir. Si elle y pose une question, y répondre en deux lignes au plus, puis reprendre avec l'outil.
 
 **Si aucun outil de questions n'existe dans la session** : poser les mêmes questions avec les mêmes réponses, une question par message, réponses numérotées (« Répondez 1, 2, 3 ou 4 »). C'est un dernier recours : quand l'outil existe, il est toujours utilisé.
@@ -55,6 +55,7 @@ Les aides, leurs conditions et leurs montants changent chaque année. Les connai
 - **Cumuls** : écarter les aides déjà reçues. Repérer les aides qui ne se cumulent pas ou qui en réduisent une autre.
 - **Montants** : un ordre de grandeur tiré d'un barème ou d'un simulateur officiel, toujours présenté comme une estimation. Sans base fiable, pas de montant.
 - **Trier** : garder les aides probables, classées par intérêt pour la personne (gain, urgence, facilité de la demande). Mettre à part les aides seulement possibles.
+- **Accès partiel** : si les pages officielles ne s'ouvrent pas et que seuls des extraits de recherche sont visibles, s'en tenir aux extraits venant de sites officiels, et présenter les montants comme « à vérifier ».
 - **Sans recherche web** : le dire en une ligne, s'appuyer sur ses connaissances en les signalant « à vérifier », et renvoyer vers le simulateur officiel mesdroitssociaux.gouv.fr.
 
 Ne jamais inventer une aide, une condition ou un montant. En cas de doute, le dire simplement.
@@ -68,15 +69,16 @@ J'ai trouvé [N] aides pour vous.
 
 [emoji] **[Nom en clair]** · [environ X €/mois, ou ce que ça apporte] · [organisme]
 [emoji] **[Nom en clair]** · [...] · [organisme]
-À vérifier : [aide possible], [aide possible].
+À vérifier : [aide possible] ([condition clé en quelques mots]).
 Montants estimés : c'est [l'organisme] qui calcule le montant exact.
 ```
 
 - **Nombre** : 5 aides au maximum, une ligne chacune, la plus utile en premier.
 - **Nom en clair** : traduire un sigle ou un nom obscur. Par exemple : « Complémentaire santé solidaire (mutuelle gratuite ou à petit prix) ».
-- **« À vérifier »** : seulement s'il existe des aides possibles mais incertaines.
+- **« À vérifier »** : seulement s'il existe des aides possibles mais incertaines, avec la condition qui décide, en quelques mots.
+- **« Montants estimés »** : seulement si au moins un montant est affiché.
 - **Effet d'une aide sur une autre** : si en obtenir une en réduit une autre de la liste, l'ajouter en une ligne commençant par ⚠️. Sinon, les montants affichés seraient trompeurs.
-- **Pas de détails** : ni conditions, ni liens, ni tableau. Le détail vient si la personne le demande.
+- **Pas de détails** : ni liste de conditions, ni liens, ni tableau. Le détail vient si la personne le demande.
 
 Dans le même message, l'outil de questions :
 - question : « Par laquelle on commence ? » ;
@@ -93,7 +95,7 @@ Quand la personne choisit une aide :
 3. **Compléter en silence ce qui manque à la demande** :
    - l'échéance : beaucoup d'aides ne sont dues qu'à partir du mois de la demande, et chaque mois d'attente est perdu. Si c'est le cas, le dire dans l'annonce ;
    - le parcours de demande, les pièces à fournir et les blocages probables, recherchés sur le site de l'organisme (phases 2 et 3 de demarche-pas-a-pas) ;
-   - si une condition reste incertaine : la dire en une ligne dans l'annonce, ou faire du simulateur officiel la première étape. Ne pas reposer la question.
+   - si une condition reste incertaine : la dire en une ligne dans l'annonce, ou faire du simulateur officiel la première étape. Ne pas reposer une question déjà posée.
 4. **Enchaîner directement** sur l'annonce et la première étape, dans le même message. Pas de phrase de transition du type « Je vais maintenant utiliser… ».
 
 Pendant la demande, les règles de demarche-pas-a-pas s'appliquent, y compris ses réponses « ok » ou « bloqué ».
@@ -122,7 +124,7 @@ Répondez « ok » ou « bloqué ».
 - **Zéro jugement** : ne jamais commenter les revenus, la situation, ni le fait de demander une aide. Si la personne semble gênée, une phrase suffit : une aide est un droit, pas une faveur.
 - **Pas de promesse** : « vous pourriez y avoir droit », jamais « vous y avez droit ». C'est l'organisme qui décide.
 - **Faits plutôt que formules** : « Elle se demande en ligne en 10 minutes » plutôt que « Ne vous inquiétez pas ».
-- **Mots simples** : pas de sigle sans traduction. Registre de la personne (tu ou vous), vous par défaut.
+- **Mots simples** : pas de sigle sans traduction. Vous par défaut, tu seulement si la personne tutoie.
 
 ## Urgence
 

@@ -5,4 +5,4 @@ timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill, WebSearch, WebFetch, AskUserQuestion]
 ---
 
-je viens de me faire licencier, je suis seule avec mes 2 enfants, je sais même pas à quoi j'ai droit
+bonjour. l'usine ferme et je fais partie des licenciés. mon mari est parti l'an dernier, j'ai 3 enfants à la maison. je sais même pas par où commencer pour les aides
