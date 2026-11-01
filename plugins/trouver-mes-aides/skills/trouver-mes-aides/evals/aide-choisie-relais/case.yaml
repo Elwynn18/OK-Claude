@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: aide-choisie-relais
+expected_outcome: |
+  Claude passe le relais à la démarche guidée (skill demarche-pas-a-pas ou format « Étape X/Y »)
+  pour demander la prime d'activité, sans reposer de questions sur la situation déjà renseignée.

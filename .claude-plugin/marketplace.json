@@ -9,6 +9,11 @@
       "name": "demarche-pas-a-pas",
       "source": "./plugins/demarche-pas-a-pas",
       "description": "Démarches administratives en France : Claude fait le maximum, puis guide une étape à la fois, en très peu de mots."
+    },
+    {
+      "name": "trouver-mes-aides",
+      "source": "./plugins/trouver-mes-aides",
+      "description": "Aides en France selon sa situation perso et pro : quelques questions à cliquer, recherche sur les sites officiels, puis la demande guidée avec demarche-pas-a-pas."
     }
   ]
 }

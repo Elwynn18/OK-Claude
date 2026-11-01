@@ -7,6 +7,8 @@ Pas besoin de savoir « parler à une IA ». Une fois l'aide installée, il suff
 
 > « J'ai reçu un courrier des impôts, je sais pas quoi faire »
 
+> « Je viens de perdre mon travail, est-ce que j'ai droit à quelque chose ? »
+
 Claude s'occupe du reste.
 
 ---
@@ -33,6 +35,31 @@ Pour toutes les démarches administratives en France qui font peur ou qu'on repo
 > 👉 Cliquez « Mon Compte ».
 > Répondez « ok » ou « bloqué ».
 
+### 🔎 Trouver mes aides
+
+Pour savoir à quelles aides on pourrait avoir droit, selon sa situation personnelle et professionnelle :
+- logement, famille, santé, handicap ;
+- emploi, chômage, études, retraite ;
+- énergie, travaux, création d'entreprise ;
+- aides de la ville ou du département.
+
+**Ce que fait Claude :**
+- Il pose quelques questions **à cliquer**, avec les réponses déjà prêtes. Rien à écrire.
+- Il ne redemande jamais ce que vous avez déjà dit. Il ne demande ni numéro ni mot de passe.
+- Il cherche sur les sites officiels et ne vous montre que les aides qui valent le coup, en quelques lignes.
+- Si vous choisissez une aide, **Démarche pas à pas** prend le relais pour la demander avec vous, une étape à la fois.
+
+**Exemple :**
+
+> J'ai trouvé 3 aides pour vous.
+> 💶 **Prime d'activité** · environ 200 €/mois · CAF
+> 🏠 **Aide au logement** · environ 150 €/mois · CAF
+> 🩺 **Complémentaire santé solidaire** (mutuelle gratuite ou à petit prix) · Assurance maladie
+>
+> *Par laquelle on commence ?* `Prime d'activité` `Aide au logement` `Complémentaire santé` `Plus tard`
+
+**Installez-la avec Démarche pas à pas**, pour que Claude puisse ensuite faire la demande avec vous.
+
 ---
 
 ## Installer une aide (5 minutes, une seule fois)
@@ -40,9 +67,11 @@ Pour toutes les démarches administratives en France qui font peur ou qu'on repo
 ### Sur claude.ai (site ou application)
 
 1. **Activez une option.** Allez dans **Paramètres → Capacités** et activez « Exécution de code et création de fichiers » (son nom peut être « Créer et modifier des fichiers »).
-2. **Téléchargez le fichier de l'aide** : [demarche-pas-a-pas.zip](https://github.com/Elwynn18/OK-Claude/raw/main/telecharger/demarche-pas-a-pas.zip). Ne le décompressez pas.
+2. **Téléchargez le fichier de l'aide** (un fichier par aide). Ne le décompressez pas.
+   - Démarche pas à pas : [demarche-pas-a-pas.zip](https://github.com/Elwynn18/OK-Claude/raw/main/telecharger/demarche-pas-a-pas.zip)
+   - Trouver mes aides : [trouver-mes-aides.zip](https://github.com/Elwynn18/OK-Claude/raw/main/telecharger/trouver-mes-aides.zip)
 3. **Ouvrez l'écran des skills.** Allez dans **Personnaliser → Skills**, cliquez sur **+**, puis **Créer un skill** et **Importer un skill**.
-4. **Importez le fichier.** Choisissez le fichier téléchargé.
+4. **Importez le fichier.** Choisissez le fichier téléchargé. Pour installer une deuxième aide, refaites les étapes 3 et 4 avec son fichier.
 
 C'est fini. Vous pouvez parler à Claude normalement.
 
@@ -55,6 +84,7 @@ Le nom des menus peut varier légèrement selon votre version de l'application. 
 ```
 claude plugin marketplace add Elwynn18/OK-Claude
 claude plugin install demarche-pas-a-pas@ok-claude
+claude plugin install trouver-mes-aides@ok-claude
 ```
 
 ---
@@ -71,6 +101,7 @@ C'est souvent comme ça que ça se passe, et c'est très bien.
 
 - **Claude ne connaît jamais vos mots de passe.** Vous vous connectez toujours vous-même.
 - **Rien n'est envoyé ni payé sans votre accord.**
+- **Une aide trouvée par Claude reste une piste.** C'est l'organisme (CAF, France Travail…) qui décide et calcule le montant exact.
 - **Claude peut se tromper.** Il vérifie sur les sites officiels, mais en cas de doute important, une aide humaine existe, par exemple les espaces France Services, gratuits.
 
 ---

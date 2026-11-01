@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: etudiant-loyer-donnees
+expected_outcome: |
+  Claude pose des questions à choix via l'outil, demande les montants par tranches,
+  ne demande aucun identifiant et ne redemande ni la situation d'étudiant ni la ville.

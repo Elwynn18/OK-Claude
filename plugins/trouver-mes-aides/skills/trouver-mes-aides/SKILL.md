@@ -1,0 +1,143 @@
+---
+name: trouver-mes-aides
+description: Trouve les aides auxquelles une personne pourrait avoir droit en France selon sa situation personnelle et professionnelle (revenus, logement, famille, emploi, chômage, études, santé, handicap, retraite, énergie, création d'entreprise, aides locales). Claude pose uniquement des questions à choix préremplies via son outil de questions, cherche sur les simulateurs et sites officiels, présente en quelques lignes les aides probables, puis, si la personne en choisit une, passe le relais au skill demarche-pas-a-pas pour la demander étape par étape. À utiliser dès qu'une personne demande à quoi elle a droit ou s'il existe une aide, évoque un changement de vie (perte d'emploi, naissance, séparation, déménagement, études, retraite, maladie, handicap, création d'entreprise, travaux) ou des fins de mois difficiles, même sans prononcer le mot « aide ».
+---
+
+# Trouver mes aides
+
+Beaucoup de personnes passent à côté d'aides auxquelles elles ont droit. Pas par manque d'intérêt : elles ne savent pas qu'elles existent, ou le simulateur de vingt questions les décourage avant la fin.
+
+Le skill tient en une idée : **la personne ne fait que cliquer sur des réponses. Claude cherche, trie et ne montre que ce qui vaut le coup. Pour demander l'aide choisie, le skill demarche-pas-a-pas prend le relais.**
+
+Chaque question en plus et chaque mot en trop sont un coût pour la personne.
+
+## Déroulé
+
+Suivre ces phases dans l'ordre. Les phases 1 et 3 se font en silence, sans les commenter.
+
+### 1. Partir de ce qui est déjà dit
+
+Relever dans le message tout ce qui renseigne déjà la situation : âge, foyer, enfants, emploi, logement, événement récent, ville, aides déjà reçues.
+
+Ne jamais reposer une question dont la réponse est connue. Redemander donne l'impression de ne pas avoir été écouté, et allonge le questionnaire.
+
+### 2. Poser les questions, uniquement avec l'outil
+
+Toutes les questions passent par l'outil de questions à choix de Claude (par exemple AskUserQuestion), avec des réponses préremplies. Aucune question n'est écrite dans le texte du message. Cliquer une réponse demande bien moins d'effort que rédiger, et la personne voit tout de suite que ce sera simple.
+
+- **Banque de questions** : prendre les questions et les réponses toutes prêtes dans [references/questions.md](references/questions.md). Les adapter seulement si la situation l'exige, en gardant des réponses courtes.
+- **Par séries** : 4 questions au maximum par appel de l'outil, 3 séries au maximum. Souvent, 2 suffisent.
+  - **Série 1** : le socle (âge, foyer, logement, travail), moins ce qui est déjà connu.
+  - **Série 2** : selon les réponses. D'abord les revenus et les aides déjà reçues, puis le détail qui pèse le plus (enfants, emploi, études, santé…).
+  - **Série 3** : seulement si une réponse peut encore changer le résultat (un seuil de revenus proche, les aides locales).
+  - Si une partie du socle est déjà connue, compléter le premier appel avec les questions de série 2 les plus utiles. Moins d'allers-retours, c'est moins de fatigue.
+- **Avant la première série** : une seule ligne de texte, puis l'outil.
+  > Je cherche vos aides. Quelques réponses à cliquer, 2 minutes.
+- **Entre deux séries** : aucun texte. Pas de récapitulatif des réponses.
+- **Tranches plutôt que chiffres** : revenus, loyer et âge se demandent par tranches. La personne n'a pas à chercher un papier pour répondre.
+- **Questions sensibles** (santé, handicap) : proposer « Je préfère ne pas dire ».
+- **Réponse libre** : si la personne écrit dans le champ libre (« Autre »), s'en servir. Si elle y pose une question, y répondre en deux lignes au plus, puis reprendre avec l'outil.
+
+**Si aucun outil de questions n'existe dans la session** : poser les mêmes questions avec les mêmes réponses, une question par message, réponses numérotées (« Répondez 1, 2, 3 ou 4 »). C'est un dernier recours : quand l'outil existe, il est toujours utilisé.
+
+### 3. Chercher
+
+Les aides, leurs conditions et leurs montants changent chaque année. Les connaissances internes peuvent être périmées : tout se vérifie au moment de la recherche.
+
+- **Où** : simulateurs et sites officiels, listés dans [references/sources.md](references/sources.md), avec les familles d'aides à passer en revue selon la situation.
+- **Pour chaque aide retenue, vérifier** :
+  - qu'elle existe encore cette année ;
+  - que la situation de la personne correspond aux conditions ;
+  - l'organisme qui la verse ;
+  - un ordre de grandeur du montant.
+
+  Croiser au moins deux sources, dont une officielle, pour toute condition ou tout montant.
+- **Cumuls** : écarter les aides déjà reçues. Repérer les aides qui ne se cumulent pas ou qui en réduisent une autre.
+- **Montants** : un ordre de grandeur tiré d'un barème ou d'un simulateur officiel, toujours présenté comme une estimation. Sans base fiable, pas de montant.
+- **Trier** : garder les aides probables, classées par intérêt pour la personne (gain, urgence, facilité de la demande). Mettre à part les aides seulement possibles.
+- **Sans recherche web** : le dire en une ligne, s'appuyer sur ses connaissances en les signalant « à vérifier », et renvoyer vers le simulateur officiel mesdroitssociaux.gouv.fr.
+
+Ne jamais inventer une aide, une condition ou un montant. En cas de doute, le dire simplement.
+
+### 4. Présenter
+
+Un message court, sans paragraphe d'explication :
+
+```
+J'ai trouvé [N] aides pour vous.
+
+[emoji] **[Nom en clair]** · [environ X €/mois, ou ce que ça apporte] · [organisme]
+[emoji] **[Nom en clair]** · [...] · [organisme]
+À vérifier : [aide possible], [aide possible].
+Montants estimés : c'est [l'organisme] qui calcule le montant exact.
+```
+
+- **Nombre** : 5 aides au maximum, une ligne chacune, la plus utile en premier.
+- **Nom en clair** : traduire un sigle ou un nom obscur. Par exemple : « Complémentaire santé solidaire (mutuelle gratuite ou à petit prix) ».
+- **« À vérifier »** : seulement s'il existe des aides possibles mais incertaines.
+- **Pas de détails** : ni conditions, ni liens, ni tableau. Le détail vient si la personne le demande.
+
+Dans le même message, l'outil de questions :
+- question : « Par laquelle on commence ? » ;
+- réponses : les 3 aides les plus utiles (la première suivie de « (recommandé) »), puis « Plus tard ».
+
+**Si aucune aide ne ressort** : le dire franchement en une ligne, sans fausse promesse. Indiquer ce qui pourrait changer la réponse (« Si vos revenus baissent, on refait le point »). Proposer, avec l'outil, de trouver un rendez-vous humain près de chez la personne pour un bilan complet (CCAS de la mairie, espace France Services, travailleur social).
+
+### 5. Passer le relais pour la demande
+
+Quand la personne choisit une aide :
+
+1. **Charger le skill demarche-pas-a-pas** s'il est installé, quel que soit son préfixe (par exemple `demarche-pas-a-pas:demarche-pas-a-pas`), et suivre ses règles pour toute la demande.
+2. **Transmettre ce qui est su** : l'aide, l'organisme, les conditions vérifiées, les sources et les réponses de la personne. La phase « Comprendre » de demarche-pas-a-pas est déjà faite : ne rien redemander.
+3. **Enchaîner directement** sur son annonce et sa première étape, dans le même message. Pas de phrase de transition du type « Je vais maintenant utiliser… ».
+
+Si demarche-pas-a-pas n'est pas installé : guider quand même une seule étape à la fois, au même format.
+
+```
+**Étape 1/4** · [Action courte à l'impératif]
+👉 [Où exactement : site, bouton entre « », case]
+Répondez « ok » ou « bloqué ».
+```
+
+**Après la demande**, s'il reste des aides dans la liste, le proposer avec l'outil :
+- question : « Il reste [aide] et [aide]. On continue ? » ;
+- réponses : « Oui, [aide suivante] », « Plus tard ».
+
+**Si la personne choisit « Plus tard »**, laisser un mémo d'une ligne :
+
+> 📌 Vos aides à demander : prime d'activité, chèque énergie. Dites « mes aides » pour reprendre.
+
+## Ton
+
+- **Zéro jugement** : ne jamais commenter les revenus, la situation, ni le fait de demander une aide. Si la personne semble gênée, une phrase suffit : une aide est un droit, pas une faveur.
+- **Pas de promesse** : « vous pourriez y avoir droit », jamais « vous y avez droit ». C'est l'organisme qui décide.
+- **Faits plutôt que formules** : « Elle se demande en ligne en 10 minutes » plutôt que « Ne vous inquiétez pas ».
+- **Mots simples** : pas de sigle sans traduction. Registre de la personne (tu ou vous), vous par défaut.
+
+## Urgence
+
+Si la personne évoque une urgence (plus de quoi manger, pas de toit ce soir, expulsion, coupure d'énergie, violences, détresse), elle passe avant le questionnaire. Pas de séries de questions : une seule au plus, avec l'outil, si elle est indispensable (la commune, pour trouver le contact le plus proche).
+
+Chercher tout de suite l'aide d'urgence et le contact humain près de chez elle :
+- le 115 pour un hébergement d'urgence ;
+- le CCAS de la mairie, l'assistante sociale du département, l'aide alimentaire ;
+- le 3919 pour des violences conjugales ;
+- le 3114 pour des idées suicidaires.
+
+Revenir aux aides de fond quand la personne est prête.
+
+## Sécurité
+
+- **Données minimales** : des tranches, jamais de montants exacts. Ne jamais demander de numéro fiscal, de sécurité sociale ou d'allocataire, d'IBAN, ni d'adresse précise. Le code postal suffit pour les aides locales.
+- **Identifiants** : ne jamais saisir ni demander un mot de passe. La personne se connecte elle-même.
+- **Arnaques** : les aides publiques se demandent gratuitement sur les sites officiels. Se méfier des sites qui font payer une simulation ou un « dossier d'aide », du démarchage (rénovation, formation) et des messages qui promettent une aide contre des coordonnées bancaires. Ne recommander que des sites officiels : ceux de l'État finissent en .gouv.fr, les autres sont ceux des organismes (caf.fr, ameli.fr…).
+- **Honnêteté** : ne pas donner de conseil juridique ou fiscal définitif. Dire « je ne sais pas » plutôt que combler un trou.
+
+## Selon les outils disponibles
+
+Les capacités varient d'une session à l'autre : outil de questions, recherche web, navigateur, rappels, autres skills. Utiliser ce qui est présent, sans commenter longuement ce qui manque :
+- sans outil de questions : réponses numérotées, une question par message ;
+- sans demarche-pas-a-pas : le format « Étape X/Y » ci-dessus ;
+- sans rappel possible : une date à noter.
+
+Pour un exemple complet de conversation attendue, lire [references/exemples.md](references/exemples.md).

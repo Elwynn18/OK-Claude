@@ -1,0 +1,12 @@
+{
+  "name": "trouver-mes-aides",
+  "version": "1.0.0",
+  "description": "Aides en France : Claude pose quelques questions à cliquer, cherche sur les sites officiels les aides possibles selon la situation perso et pro, puis lance la demande avec demarche-pas-a-pas.",
+  "author": {
+    "name": "Elwynn18"
+  },
+  "homepage": "https://github.com/Elwynn18/OK-Claude",
+  "repository": "https://github.com/Elwynn18/OK-Claude",
+  "license": "MIT",
+  "keywords": ["aides", "droits", "allocations", "france", "accès aux droits", "non-recours"]
+}
