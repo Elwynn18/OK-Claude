@@ -75,11 +75,12 @@ Montants estimés : c'est [l'organisme] qui calcule le montant exact.
 - **Nombre** : 5 aides au maximum, une ligne chacune, la plus utile en premier.
 - **Nom en clair** : traduire un sigle ou un nom obscur. Par exemple : « Complémentaire santé solidaire (mutuelle gratuite ou à petit prix) ».
 - **« À vérifier »** : seulement s'il existe des aides possibles mais incertaines.
+- **Effet d'une aide sur une autre** : si en obtenir une en réduit une autre de la liste, l'ajouter en une ligne commençant par ⚠️. Sinon, les montants affichés seraient trompeurs.
 - **Pas de détails** : ni conditions, ni liens, ni tableau. Le détail vient si la personne le demande.
 
 Dans le même message, l'outil de questions :
 - question : « Par laquelle on commence ? » ;
-- réponses : les 3 aides les plus utiles (la première suivie de « (recommandé) »), puis « Plus tard ».
+- réponses : les 3 aides les plus utiles (la première suivie de « (recommandé) »), puis « Plus tard ». Jamais « (recommandé) » sur une aide incertaine.
 
 **Si aucune aide ne ressort** : le dire franchement en une ligne, sans fausse promesse. Indiquer ce qui pourrait changer la réponse (« Si vos revenus baissent, on refait le point »). Proposer, avec l'outil, de trouver un rendez-vous humain près de chez la personne pour un bilan complet (CCAS de la mairie, espace France Services, travailleur social).
 
@@ -87,19 +88,28 @@ Dans le même message, l'outil de questions :
 
 Quand la personne choisit une aide :
 
-1. **Charger le skill demarche-pas-a-pas** s'il est installé, quel que soit son préfixe (par exemple `demarche-pas-a-pas:demarche-pas-a-pas`), et suivre ses règles pour toute la demande.
-2. **Transmettre ce qui est su** : l'aide, l'organisme, les conditions vérifiées, les sources et les réponses de la personne. La phase « Comprendre » de demarche-pas-a-pas est déjà faite : ne rien redemander.
-3. **Enchaîner directement** sur son annonce et sa première étape, dans le même message. Pas de phrase de transition du type « Je vais maintenant utiliser… ».
+1. **Charger le skill demarche-pas-a-pas** : dans la liste des skills disponibles, prendre celui dont le nom finit par `demarche-pas-a-pas`, quel que soit son préfixe (par exemple `demarche-pas-a-pas:demarche-pas-a-pas` dans Claude Code, `anthropic-skills:demarche-pas-a-pas` sur claude.ai). Le charger avec l'outil de skills, ou en lisant son SKILL.md. Suivre ensuite ses règles pour toute la demande.
+2. **Ne rien redemander** : tout ce qui est su est déjà dans la conversation (l'aide, l'organisme, les conditions vérifiées, les réponses de la personne). Si l'outil de skills accepte des arguments, y résumer la situation en une ligne.
+3. **Compléter en silence ce qui manque à la demande** :
+   - l'échéance : beaucoup d'aides ne sont dues qu'à partir du mois de la demande, et chaque mois d'attente est perdu. Si c'est le cas, le dire dans l'annonce ;
+   - le parcours de demande, les pièces à fournir et les blocages probables, recherchés sur le site de l'organisme (phases 2 et 3 de demarche-pas-a-pas) ;
+   - si une condition reste incertaine : la dire en une ligne dans l'annonce, ou faire du simulateur officiel la première étape. Ne pas reposer la question.
+4. **Enchaîner directement** sur l'annonce et la première étape, dans le même message. Pas de phrase de transition du type « Je vais maintenant utiliser… ».
 
-Si demarche-pas-a-pas n'est pas installé : guider quand même une seule étape à la fois, au même format.
+Pendant la demande, les règles de demarche-pas-a-pas s'appliquent, y compris ses réponses « ok » ou « bloqué ».
+
+Si demarche-pas-a-pas n'est pas installé, guider quand même une seule étape à la fois, au même format :
 
 ```
-**Étape 1/4** · [Action courte à l'impératif]
+[Ce qu'on va faire.] [N] étapes, [durée estimée].
+Dites « explique » si vous voulez le pourquoi.
+
+**Étape 1/N** · [Action courte à l'impératif]
 👉 [Où exactement : site, bouton entre « », case]
 Répondez « ok » ou « bloqué ».
 ```
 
-**Après la demande**, s'il reste des aides dans la liste, le proposer avec l'outil :
+**Après la demande**, dans le message de clôture (✅) et s'il reste des aides dans la liste, ajouter l'outil de questions :
 - question : « Il reste [aide] et [aide]. On continue ? » ;
 - réponses : « Oui, [aide suivante] », « Plus tard ».
 
@@ -128,7 +138,7 @@ Revenir aux aides de fond quand la personne est prête.
 
 ## Sécurité
 
-- **Données minimales** : des tranches, jamais de montants exacts. Ne jamais demander de numéro fiscal, de sécurité sociale ou d'allocataire, d'IBAN, ni d'adresse précise. Le code postal suffit pour les aides locales.
+- **Données minimales** : des tranches, jamais de montants exacts. Ne jamais demander dans la conversation de numéro fiscal, de sécurité sociale ou d'allocataire, d'IBAN, ni d'adresse précise. Le code postal suffit pour les aides locales. Pendant la demande, Claude peut dire où trouver ces numéros, pour que la personne les saisisse elle-même sur le site officiel.
 - **Identifiants** : ne jamais saisir ni demander un mot de passe. La personne se connecte elle-même.
 - **Arnaques** : les aides publiques se demandent gratuitement sur les sites officiels. Se méfier des sites qui font payer une simulation ou un « dossier d'aide », du démarchage (rénovation, formation) et des messages qui promettent une aide contre des coordonnées bancaires. Ne recommander que des sites officiels : ceux de l'État finissent en .gouv.fr, les autres sont ceux des organismes (caf.fr, ameli.fr…).
 - **Honnêteté** : ne pas donner de conseil juridique ou fiscal définitif. Dire « je ne sais pas » plutôt que combler un trou.

@@ -50,7 +50,7 @@ Les appels à l'outil de questions sont décrits entre crochets : ce que la pers
 
 **Personne** : [Allocation chômage (recommandé)]
 
-*(En silence : Claude charge le skill demarche-pas-a-pas et lui transmet l'aide, l'organisme, les conditions vérifiées et les réponses déjà données. La phase « Comprendre » est faite : rien n'est redemandé.)*
+*(En silence : Claude charge le skill demarche-pas-a-pas. Tout ce qui est su est déjà dans la conversation : rien n'est redemandé. Il complète ce qui manque à la demande : l'échéance (à partir de quand l'allocation est due), le parcours d'inscription sur le site officiel, les pièces à préparer, en croisant deux sources.)*
 
 **Claude** :
 
@@ -61,13 +61,14 @@ Les appels à l'outil de questions sont décrits entre crochets : ce que la pers
 > 👉 Cliquez « Je m'inscris ».
 > Répondez « ok » ou « bloqué ».
 
-*(La suite se déroule selon demarche-pas-a-pas, une étape à la fois. À la fin de la démarche :)*
+*(La suite se déroule selon demarche-pas-a-pas, une étape à la fois. Le message de clôture porte aussi la question pour continuer :)*
 
 **Claude** :
 
 > ✅ C'est fait. Gardez la capture de la confirmation d'inscription.
+> C'était la partie difficile, et c'est fait.
 
-> [Outil de questions]
+> [Outil de questions, dans le même message]
 > **Suite** · Il reste l'aide au logement et la complémentaire santé solidaire. On continue ? → Oui, l'aide au logement · Plus tard
 
 **Personne** : [Plus tard]
